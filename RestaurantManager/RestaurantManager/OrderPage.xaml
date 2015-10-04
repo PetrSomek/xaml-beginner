@@ -9,9 +9,27 @@
 
     <Grid Background="Black">
         <Grid.RowDefinitions>
-            <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBlock Text="**Clear All Orders**" Grid.Row="2" TextAlignment="Center" VerticalAlignment="Center"></TextBlock>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"></ColumnDefinition>
+            <ColumnDefinition Width="2.5*"></ColumnDefinition>
+            <ColumnDefinition Width="2.5*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <AppBar Grid.ColumnSpan="4" Background="#FF303030">
+            <AppBarButton Label="Home" Click="AppBarButton_Click"  Icon="Home">
+            </AppBarButton>
+        </AppBar>
+        <TextBlock Text="Special Requests:" Grid.Row="1" Grid.Column="1"></TextBlock>
+        <TextBlock Text="Order Items:" Grid.Row="1" Grid.Column="2"></TextBlock>
+        <ListBox Grid.Row="1" Grid.Column="0" Grid.RowSpan="3"></ListBox>
+        <ListBox Grid.Row="2" Grid.Column="3" Grid.RowSpan="2"></ListBox>
+        <Button Content="Add to Order" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click"></Button>
+        <Button Content="Submit Order" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click_1"></Button>
     </Grid>
+
 </Page>

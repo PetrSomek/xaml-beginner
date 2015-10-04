@@ -30,5 +30,15 @@ namespace RestaurantManager
         private void TextBlock_PointerPressed(object sender, PointerRoutedEventArgs e)
         {
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(ExpeditePage));
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(OrderPage));
+        }
     }
 }
