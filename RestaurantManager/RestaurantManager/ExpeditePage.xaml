@@ -7,15 +7,21 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="Black">
+    <Page.TopAppBar>
+        <AppBar>
+            <AppBarButton Label="Home" Click="AppBarButton_Click" Icon="Home" />
+        </AppBar>
+    </Page.TopAppBar>
+    <Grid Background="Black" RequestedTheme="Dark">
         <Grid.RowDefinitions>
             <RowDefinition Height="9*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
-        <AppBar Grid.ColumnSpan="3" Grid.Row="0">
-            <AppBarButton Label="Home" Click="AppBarButton_Click" Icon="Home" />
-        </AppBar>
-        <GridView Grid.Row="1"/>
-        <Button Content="Clear All Orders" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"></Button>
+        <GridView Grid.Row="0" Height="691" VerticalAlignment="Top">
+            <GridView.ItemsSource>
+                <Binding Source="{StaticResource DataManager}" Path="OrderItems"></Binding>
+            </GridView.ItemsSource>
+        </GridView>
+        <Button Content="Clear All Orders" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click"></Button>
     </Grid>
 </Page>

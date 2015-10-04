@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestaurantManager.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -30,6 +31,12 @@ namespace RestaurantManager
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(MainPage));
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            DataManager dm = Application.Current.Resources["DataManager"] as DataManager;
+            dm.OrderItems.Clear();
         }
     }
 }

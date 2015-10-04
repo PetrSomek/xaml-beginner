@@ -26,8 +26,16 @@
         </AppBar>
         <TextBlock Text="Special Requests:" Grid.Row="1" Grid.Column="1"></TextBlock>
         <TextBlock Text="Order Items:" Grid.Row="1" Grid.Column="2"></TextBlock>
-        <ListBox Grid.Row="1" Grid.Column="0" Grid.RowSpan="3"></ListBox>
-        <ListBox Grid.Row="2" Grid.Column="3" Grid.RowSpan="2"></ListBox>
+        <ListBox x:Name="MenuItemsList" Grid.Row="1" Grid.Column="0" Grid.RowSpan="3" Background="Black" Foreground="White">
+            <ListBox.ItemsSource>
+                <Binding Source="{StaticResource DataManager}" Path="MenuItems"></Binding>
+            </ListBox.ItemsSource>
+        </ListBox>
+        <ListBox x:Name="SelectedItemsList" Grid.Row="2" Grid.Column="3" Grid.RowSpan="2" Background="Black" Foreground="White">
+            <ListBox.ItemsSource>
+                <Binding Source="{StaticResource DataManager}" Path="CurrentlySelectedMenuItems"></Binding>
+            </ListBox.ItemsSource>
+        </ListBox>
         <Button Content="Add to Order" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click"></Button>
         <Button Content="Submit Order" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click_1"></Button>
     </Grid>
